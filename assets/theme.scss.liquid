@@ -2330,3 +2330,60 @@ input[type="submit"].password-page__signup-form__submit {
     transition: ease-in-out 0.2s;
   }
 }
+.hr--invisible {
+  border-bottom: 0;
+}
+.caption-wrapper{
+  position: relative;
+
+  .caption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85) none repeat scroll 0 0;
+    visibility: hidden;
+
+    div{
+      display: table;
+      height: 100%;
+      width: 100%;
+
+      .caption-span {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+
+        a {
+          background: #000;
+          padding: 30px 33px;
+          color: white;
+          font-size: 30px;
+          font-weight: bold;
+          -webkit-transform: scale(1);
+          -moz-transform: scale(1);
+          -ms-transform: scale(1);
+          -o-transform: scale(1);
+          transform: scale(1);
+          -webkit-transition: ease-in-out 0.15s;
+          -moz-transition: ease-in-out 0.15s;
+          -ms-transition: ease-in-out 0.15s;
+          -o-transition: ease-in-out 0.15s;
+          transition: ease-in-out 0.15s;
+          cursor: pointer;
+
+          &:hover{
+            padding: 33px 37px;
+            font-size: 35px;
+          }
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .caption {
+      visibility: visible;
+    }
+  }
+}

@@ -1,9 +1,9 @@
-<div class="grid">
+<div class="grid" style="background: #ededed none repeat scroll 0 0; padding: 50px 0; color: #202047; font-size: 17px;">
   {% for block in section.blocks %}
     {% if section.settings.home_page_full_width %}
-      <div class="grid__item page-content__item" {{ block.shopify_attributes }}>
+      <div class="grid__item page-content__item text-{{ block.settings.align }}" {{ block.shopify_attributes }}>
     {% else %}
-      <div class="grid__item page-content__item post-large--two-thirds push--post-large--one-sixth" {{ block.shopify_attributes }}>
+      <div class="grid__item page-content__item post-large--two-thirds push--post-large--one-sixth text-{{ block.settings.align }}" {{ block.shopify_attributes }}>
     {% endif %}
       {% if block.type == 'page' and block.settings.show_heading %}
         <div class="section-header section-header--small">
@@ -71,6 +71,17 @@
             "id": "home_page_richtext",
             "label": "Text",
             "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          },
+          {
+            "type": "radio",
+            "id": "align",
+            "label": "Text alignment",
+            "options": [
+              { "value": "left", "label": "Left" },
+              { "value": "center", "label": "Center" },
+              { "value": "right", "label": "Right" }
+            ],
+            "default": "left"
           }
         ]
       }
@@ -87,7 +98,8 @@
             "type": "text",
             "settings": {
               "title": "Talk about your brand",
-              "home_page_richtext": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+              "home_page_richtext": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+              "align": "left"
             }
           }
         ]

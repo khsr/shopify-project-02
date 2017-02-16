@@ -3,10 +3,10 @@
 {% assign rows = section.settings.num_rows %}
 {% assign total_products = products_per_row | times: rows %}
 
-<div data-section-id="{{ section.id }}" data-section-type="featured-products-section" class="wrapper">
+<div data-section-id="{{ section.id }}" data-section-type="featured-products-section">
   {% unless section.settings.title == blank %}
   <div class="section-header section-header--small">
-    <h2 class="section-header__title">
+    <h2 class="section-header__title text-center">
       {{ section.settings.title }}
     </h2>
   </div>
@@ -51,6 +51,14 @@
         </div>
       </div>
     {% endfor %}
+    {% if section.settings.show_view_all %}
+      <hr class="hr--invisible"></hr>
+      <div class="text-center">
+        <a href="{{ collection.url }}" class="btn" style="padding: 10px 20px;">
+          {{ 'collections.general.view_all' | t | upcase }}
+        </a>
+      </div>
+    {% endif %}
   </div>
 </div>
 
@@ -141,6 +149,12 @@
         "type": "checkbox",
         "id": "center_grid_link",
         "label": "Center text below product images"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_view_all",
+        "label": "Show 'View all' button",
+        "default": false
       }
     ],
     "presets": [

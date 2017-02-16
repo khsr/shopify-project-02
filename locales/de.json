@@ -96,7 +96,8 @@
     "general": {
       "title": "Zusammenstellungen",
       "no_matches": "Es tut uns leid, aber Ihre Suche nach Produkten hat keine Treffer ergeben.",
-      "link_title": "Durchsuchen Sie unsere {{ title }}-Zusammenstellung"
+      "link_title": "Durchsuchen Sie unsere {{ title }}-Zusammenstellung",
+      "view_all": "View all"
     },
     "sorting": {
       "title": "Sortieren nach",

@@ -96,7 +96,8 @@
     "general": {
       "title": "Coleções",
       "no_matches": "Lamentamos, mas nenhum produto corresponde à sua pesquisa.",
-      "link_title": "Explorar a nossa coleção {{ title }}"
+      "link_title": "Explorar a nossa coleção {{ title }}",
+      "view_all": "View all"
     },
     "sorting": {
       "title": "Ordenar por",

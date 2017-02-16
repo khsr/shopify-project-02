@@ -17,10 +17,18 @@
   {% for block in section.blocks limit: section.blocks.size %}
 
     {% if block.settings.image != blank %}
-      <div class="grid__item {{ featured_image_width }}" {{ block.shopify_attributes }}>
-        {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
+      <div class="grid__item {{ featured_image_width }} caption-wrapper" {{ block.shopify_attributes }}>
+
+        <div class="caption">
+          <div>
+            <span class="caption-span">
+              {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
+              +
+              {% if block.settings.link != blank %}</a>{% endif %}
+            </span>
+          </div>
+        </div>
           {{ block.settings.image | img_url: '1024x' | img_tag: block.settings.image.alt }}
-        {% if block.settings.link != blank %}</a>{% endif %}
       </div>
     {% else %}
       <div class="grid__item {{ featured_image_width }}" {{ block.shopify_attributes }}>
