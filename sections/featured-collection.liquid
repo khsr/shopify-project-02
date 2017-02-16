@@ -3,7 +3,7 @@
 {% assign rows = section.settings.num_rows %}
 {% assign total_products = products_per_row | times: rows %}
 
-<div data-section-id="{{ section.id }}" data-section-type="featured-products-section">
+<div data-section-id="{{ section.id }}" data-section-type="featured-products-section" class="wrapper">
   {% unless section.settings.title == blank %}
   <div class="section-header section-header--small">
     <h2 class="section-header__title">

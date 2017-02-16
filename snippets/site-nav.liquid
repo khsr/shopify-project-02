@@ -16,7 +16,7 @@
     {% if linklists[child_list_handle].links != blank %}
       <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
         <a href="{{ link.url }}" class="site-nav__link">
-          {{ link.title }}
+          {{ link.title | upcase }}
           <span class="icon-fallback-text">
             <span class="icon icon-arrow-down" aria-hidden="true"></span>
           </span>
@@ -31,7 +31,7 @@
       </li>
     {% else %}
       <li {% if link.active %}class="site-nav--active"{% endif %}>
-        <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+        <a href="{{ link.url }}" class="site-nav__link">{{ link.title | upcase }}</a>
       </li>
     {% endif %}
   {% endfor %}
