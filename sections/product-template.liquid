@@ -9,7 +9,7 @@
 
   <div class="product-single">
     <div class="grid product-single__hero">
-      <div class="grid__item post-large--one-half">
+      <div class="grid__item post-large--three-fifths">
 
         {% if section.settings.product_thumbnails_position == 'below' or product.images.size < 2 %}
 
@@ -68,11 +68,11 @@
         {% endif %}
 
       </div>
-      <div class="grid__item post-large--one-half">
+      <div class="grid__item post-large--two-fifths">
         {% if section.settings.product_vendor_enable %}
           <span class="h3" itemprop="brand">{{ product.vendor }}</span>
         {% endif %}
-        <h1 itemprop="name">{{ product.title }}</h1>
+        <h2 itemprop="name">{{ product.title }}</h2>
 
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
           {% assign variant = product.selected_or_first_available_variant %}
