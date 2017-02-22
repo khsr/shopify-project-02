@@ -97,9 +97,7 @@
               </s>
             {% endif %}
           </div>
-          {% comment %}
-          [powr-countdown-timer id=f76e5965_1487581924]
-          {% endcomment %}
+
           <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
             <select name="id" id="productSelect" class="product-single__variants">
               {% for variant in product.variants %}
@@ -125,15 +123,15 @@
             </button>
           </form>
 
+            {% if section.settings.social_sharing %}
+                <hr class="hr--clear hr--small">
+                <h2 class="h4">{{ 'products.general.share_title' | t }}</h2>
+                {% include 'social-sharing' %}
+            {% endif %}
+            <br/>
           <div class="product-description rte" itemprop="description">
             {{ product.description }}
           </div>
-
-          {% if section.settings.social_sharing %}
-            <hr class="hr--clear hr--small">
-            <h2 class="h4">{{ 'products.general.share_title' | t }}</h2>
-            {% include 'social-sharing' %}
-          {% endif %}
         </div>
 
       </div>
